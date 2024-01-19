@@ -1,0 +1,4 @@
+function litres(time) {
+  var l = Math.floor(time * 0.5);
+  return l;
+}
