@@ -1,0 +1,4 @@
+function smash (words) {
+  const string = words.join(" ");
+  return string;
+};
