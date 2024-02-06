@@ -6,7 +6,7 @@ function firstNonRepeatingLetter(s) {
       return s[i];
     }
   }
-  return null;
+  return '';
 }
 
 //Check if the first and last occurrence of a letter are equal
