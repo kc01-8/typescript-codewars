@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div id="main">
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        //Text
+        var element=document.createElement("p");
+        element.appendChild(document.createTextNode("N"));
+        element.appendChild(document.createTextNode("N"));
+        //BUTTON
+        var elementButton=document.createElement("BUTTON");
+        elementButton.style.width = "100px"
+        elementButton.style.height = "100px"
+        document.onclick = destroyNiggers;
+        
+  // Default data to prove point
+  var dataArray = [
+    { id: 1, data: 'Item 1' },
+    { id: 2, data: 'Item 2' },
+    { id: 3, data: 'Item 3' },
+  ];
+
+  // Function which creates the table with tags according to "Twitter bootstrap" framework
+  function createTableRows(dataArray) {
+    var table = document.createElement('table');
+    table.classList.add('table', 'table-dark');
+
+    var thead = document.createElement('thead');
+    var headerRow = document.createElement('tr');
+    var th1 = document.createElement('th');
+    var th2 = document.createElement('th');
+
+    th1.textContent = '#';
+    th2.textContent = 'Data';
+    
+    // Append each header
+    headerRow.appendChild(th1);
+    headerRow.appendChild(th2);
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create the body, and using a function for each piece of data fill a cell in the according place, adding rows and cells within the headers previously made
+    var tbody = document.createElement('tbody');
+
+    dataArray.forEach(function(item, index) {
+      var row = document.createElement('tr');
+      var numberCell = document.createElement('td');
+      var dataCell = document.createElement('td');
+
+      numberCell.textContent = index + 1;
+      dataCell.textContent = item.data;
+
+      row.appendChild(numberCell);
+      row.appendChild(dataCell);
+      tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+
+    return table;
+  }
+  // Execute the function so it can be added below
+  var dynamicTable = createTableRows(dataArray);
+  
+        
+        
+        function destroyNiggers() {
+          document.getElementById("main").appendChild(element);
+          document.getElementById("main").appendChild(elementButton);
+          document.getElementById('main').appendChild(dynamicTable);
+        }
+        
+    </script>
+
+
+    <p>
+    
+    </p>
+    
+  </body>
+
+
+</html>
